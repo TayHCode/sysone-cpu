@@ -1,0 +1,538 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-09-21T15:32:59Z",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "onnxruntime": "1.24.3",
+    "threads": 4,
+    "model_path": "<external typed-decisions ONNX bundle>",
+    "cold_session_ms": 1101.505,
+    "rss_before_mib": 63.2,
+    "rss_after_session_mib": 1494.69,
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "config": {
+      "max_len": 1024,
+      "head_max_len": 256,
+      "calibration_source": "See pinned upstream rl_agent_config.json; omitted from this measurement summary."
+    }
+  },
+  "workloads": {
+    "1": {
+      "questions": 1,
+      "p50_ms": 131.17,
+      "p95_ms": 136.703,
+      "mean_ms": 131.287,
+      "min_ms": 124.797,
+      "max_ms": 137.892,
+      "questions_per_second_p50": 7.624,
+      "rss_peak_mib": 1520.46,
+      "cpu_percent_mean_sampled": 398.78,
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        124.797,
+        130.627,
+        131.949,
+        131.17,
+        137.892
+      ],
+      "answers": {
+        "refund": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      }
+    },
+    "3": {
+      "questions": 3,
+      "p50_ms": 907.719,
+      "p95_ms": 915.568,
+      "mean_ms": 901.916,
+      "min_ms": 883.653,
+      "max_ms": 916.187,
+      "questions_per_second_p50": 3.305,
+      "rss_peak_mib": 1583.79,
+      "cpu_percent_mean_sampled": 399.04,
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        916.187,
+        907.719,
+        913.09,
+        883.653,
+        888.928
+      ],
+      "answers": {
+        "department": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "urgency": {
+          "type": "score",
+          "score": 1.6111,
+          "probabilities": {
+            "0": 0.0408,
+            "1": 0.3073,
+            "2": 0.6519
+          },
+          "confidence": 0.2972,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "refund": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      }
+    },
+    "4": {
+      "questions": 4,
+      "p50_ms": 1214.623,
+      "p95_ms": 1221.884,
+      "mean_ms": 1213.795,
+      "min_ms": 1204.588,
+      "max_ms": 1223.167,
+      "questions_per_second_p50": 3.293,
+      "rss_peak_mib": 1612.12,
+      "cpu_percent_mean_sampled": 399.76,
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        1223.167,
+        1216.752,
+        1214.623,
+        1209.843,
+        1204.588
+      ],
+      "answers": {
+        "q0": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q1": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q2": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q3": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      }
+    },
+    "8": {
+      "questions": 8,
+      "p50_ms": 2503.536,
+      "p95_ms": 2519.301,
+      "mean_ms": 2498.3,
+      "min_ms": 2463.74,
+      "max_ms": 2523.061,
+      "questions_per_second_p50": 3.195,
+      "rss_peak_mib": 1726.82,
+      "cpu_percent_mean_sampled": 397.66,
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        2463.74,
+        2503.536,
+        2504.261,
+        2496.902,
+        2523.061
+      ],
+      "answers": {
+        "q0": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q1": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q2": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q3": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q4": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q5": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q6": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q7": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      }
+    },
+    "16": {
+      "questions": 16,
+      "p50_ms": 5142.101,
+      "p95_ms": 5154.702,
+      "mean_ms": 5130.438,
+      "min_ms": 5072.911,
+      "max_ms": 5154.835,
+      "questions_per_second_p50": 3.112,
+      "rss_peak_mib": 1955.73,
+      "cpu_percent_mean_sampled": 393.88,
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        5128.171,
+        5142.101,
+        5154.835,
+        5072.911,
+        5154.172
+      ],
+      "answers": {
+        "q0": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q1": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q2": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q3": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q4": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q5": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q6": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q7": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q8": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q9": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q10": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q11": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q12": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q13": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q14": {
+          "type": "noul",
+          "noul": 0.68,
+          "confidence": 0.68,
+          "action": {
+            "act_probability": 1.0
+          }
+        },
+        "q15": {
+          "type": "choice",
+          "choice": "billing",
+          "probabilities": {
+            "billing": 0.6989,
+            "technical": 0.0814,
+            "sales": 0.1338,
+            "other": 0.086
+          },
+          "confidence": 0.3258,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      }
+    }
+  },
+  "batch_equivalence": {
+    "same_public_answers": true,
+    "batched": {
+      "department": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.6989,
+          "technical": 0.0814,
+          "sales": 0.1338,
+          "other": 0.086
+        },
+        "confidence": 0.3258,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "score": 1.6111,
+        "probabilities": {
+          "0": 0.0408,
+          "1": 0.3073,
+          "2": 0.6519
+        },
+        "confidence": 0.2972,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "refund": {
+        "type": "noul",
+        "noul": 0.68,
+        "confidence": 0.68,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    },
+    "singles": {
+      "department": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.6989,
+          "technical": 0.0814,
+          "sales": 0.1338,
+          "other": 0.086
+        },
+        "confidence": 0.3258,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "score": 1.6111,
+        "probabilities": {
+          "0": 0.0408,
+          "1": 0.3073,
+          "2": 0.6519
+        },
+        "confidence": 0.2972,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "refund": {
+        "type": "noul",
+        "noul": 0.68,
+        "confidence": 0.68,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    }
+  }
+}

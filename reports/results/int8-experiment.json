@@ -1,0 +1,272 @@
+{
+  "host": "Windows 11 / Ryzen 9 7950X, CPUExecutionProvider only",
+  "ort": "1.24.3",
+  "n_cases": 40,
+  "variants": {
+    "fp32": {
+      "size_mb": 1610.9,
+      "cold_session_ms_4t": 4615.6,
+      "latency_4t": {
+        "1": {
+          "p50_ms": 122.5,
+          "p95_ms": 123.9,
+          "q_per_s": 8.16
+        },
+        "3": {
+          "p50_ms": 425.1,
+          "p95_ms": 428.3,
+          "q_per_s": 7.06
+        },
+        "16": {
+          "p50_ms": 2391.2,
+          "p95_ms": 2405.6,
+          "q_per_s": 6.69
+        }
+      },
+      "latency_16t": {
+        "1": {
+          "p50_ms": 96.3,
+          "p95_ms": 100.0,
+          "q_per_s": 10.38
+        },
+        "3": {
+          "p50_ms": 283.6,
+          "p95_ms": 304.4,
+          "q_per_s": 10.58
+        },
+        "16": {
+          "p50_ms": 1558.1,
+          "p95_ms": 1572.5,
+          "q_per_s": 10.27
+        }
+      },
+      "rss_peak_mib_after": 1783
+    },
+    "int8_pertensor": {
+      "size_mb": 405.5,
+      "cold_session_ms_4t": 818.4,
+      "parity_vs_fp32": {
+        "decisions": 70,
+        "argmax_agree": 59,
+        "agree_pct": 84.29,
+        "max_abs_prob_drift": 0.3252,
+        "mean_abs_prob_drift": 0.0759,
+        "p95_abs_prob_drift": 0.1986,
+        "mean_kl": 0.036867,
+        "flips(case,qid,type,fp32_maxprob)": [
+          [
+            1,
+            "urgency",
+            "score",
+            0.526
+          ],
+          [
+            3,
+            "risk",
+            "score",
+            0.254
+          ],
+          [
+            7,
+            "risk",
+            "score",
+            0.247
+          ],
+          [
+            9,
+            "urgency",
+            "score",
+            0.617
+          ],
+          [
+            15,
+            "sent",
+            "choice",
+            0.507
+          ],
+          [
+            16,
+            "dept",
+            "choice",
+            0.3
+          ],
+          [
+            19,
+            "risk",
+            "score",
+            0.283
+          ],
+          [
+            25,
+            "urgency",
+            "score",
+            0.495
+          ],
+          [
+            27,
+            "risk",
+            "score",
+            0.303
+          ],
+          [
+            29,
+            "urgency",
+            "score",
+            0.583
+          ],
+          [
+            31,
+            "risk",
+            "score",
+            0.285
+          ]
+        ]
+      },
+      "latency_4t": {
+        "1": {
+          "p50_ms": 47.7,
+          "p95_ms": 48.4,
+          "q_per_s": 20.95
+        },
+        "3": {
+          "p50_ms": 143.8,
+          "p95_ms": 148.7,
+          "q_per_s": 20.86
+        },
+        "16": {
+          "p50_ms": 1036.1,
+          "p95_ms": 1049.3,
+          "q_per_s": 15.44
+        }
+      },
+      "latency_16t": {
+        "1": {
+          "p50_ms": 54.7,
+          "p95_ms": 58.9,
+          "q_per_s": 18.27
+        },
+        "3": {
+          "p50_ms": 153.4,
+          "p95_ms": 159.4,
+          "q_per_s": 19.55
+        },
+        "16": {
+          "p50_ms": 845.2,
+          "p95_ms": 868.5,
+          "q_per_s": 18.93
+        }
+      },
+      "rss_peak_mib_after": 708
+    },
+    "int8_perchannel": {
+      "size_mb": 407.0,
+      "cold_session_ms_4t": 844.1,
+      "parity_vs_fp32": {
+        "decisions": 70,
+        "argmax_agree": 60,
+        "agree_pct": 85.71,
+        "max_abs_prob_drift": 0.3269,
+        "mean_abs_prob_drift": 0.0791,
+        "p95_abs_prob_drift": 0.2177,
+        "mean_kl": 0.041753,
+        "flips(case,qid,type,fp32_maxprob)": [
+          [
+            3,
+            "risk",
+            "score",
+            0.254
+          ],
+          [
+            7,
+            "risk",
+            "score",
+            0.247
+          ],
+          [
+            19,
+            "risk",
+            "score",
+            0.283
+          ],
+          [
+            22,
+            "angry",
+            "noul",
+            0.509
+          ],
+          [
+            28,
+            "dept",
+            "choice",
+            0.278
+          ],
+          [
+            29,
+            "urgency",
+            "score",
+            0.583
+          ],
+          [
+            30,
+            "angry",
+            "noul",
+            0.701
+          ],
+          [
+            31,
+            "risk",
+            "score",
+            0.285
+          ],
+          [
+            35,
+            "sent",
+            "choice",
+            0.635
+          ],
+          [
+            35,
+            "risk",
+            "score",
+            0.302
+          ]
+        ]
+      },
+      "latency_4t": {
+        "1": {
+          "p50_ms": 48.9,
+          "p95_ms": 52.2,
+          "q_per_s": 20.44
+        },
+        "3": {
+          "p50_ms": 146.4,
+          "p95_ms": 147.9,
+          "q_per_s": 20.49
+        },
+        "16": {
+          "p50_ms": 1031.8,
+          "p95_ms": 1058.3,
+          "q_per_s": 15.51
+        }
+      },
+      "latency_16t": {
+        "1": {
+          "p50_ms": 57.6,
+          "p95_ms": 60.2,
+          "q_per_s": 17.36
+        },
+        "3": {
+          "p50_ms": 159.3,
+          "p95_ms": 183.5,
+          "q_per_s": 18.84
+        },
+        "16": {
+          "p50_ms": 860.5,
+          "p95_ms": 893.9,
+          "q_per_s": 18.59
+        }
+      },
+      "rss_peak_mib_after": 713
+    }
+  }
+}

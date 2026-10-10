@@ -1,0 +1,36 @@
+{
+  "source": {
+    "pytorch": "<external typed-decisions checkpoint>",
+    "onnx": "<external typed-decisions ONNX bundle>"
+  },
+  "cases": [
+    {
+      "case": "mixed",
+      "questions": 3,
+      "max_abs_logit_error": 4.291534423828125e-06,
+      "max_abs_action_probability_error": 0.0,
+      "public_answers_equal_after_legend_strip": true
+    },
+    {
+      "case": "noul",
+      "questions": 1,
+      "max_abs_logit_error": 1.6689300537109375e-06,
+      "max_abs_action_probability_error": 0.0,
+      "public_answers_equal_after_legend_strip": true
+    },
+    {
+      "case": "twenty_options",
+      "questions": 4,
+      "max_abs_logit_error": 4.172325134277344e-06,
+      "max_abs_action_probability_error": 0.0,
+      "public_answers_equal_after_legend_strip": true
+    },
+    {
+      "case": "long_state",
+      "questions": 3,
+      "max_abs_logit_error": 5.9604644775390625e-06,
+      "max_abs_action_probability_error": 0.0,
+      "public_answers_equal_after_legend_strip": true
+    }
+  ]
+}

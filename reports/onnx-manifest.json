@@ -1,0 +1,32 @@
+{
+  "source_wrapper": {
+    "repository": "receptron/laya",
+    "commit": "6478649e723122ca24bbf5fb69ed1010023c9750",
+    "package_version": "0.1.2",
+    "license": "MIT (wrapper/export); model weights Apache-2.0"
+  },
+  "published_base_bundle": {
+    "repository": "receptron/laya-onnx",
+    "revision": "68f27dfe5a27a54fb2b1fefc432f43f972e90868",
+    "laya_onnx_sha256": "a874eb254b58b0fcb1e7ad56fbb188c29d64e08c9a46b689433e1f52c66dba1e",
+    "laya_onnx_data_sha256": "487746363a8da57bcadb4345352997d22a0fb90d70aa22c6856668d023242aba",
+    "note": "English base checkpoint, not typed-decisions fine-tune"
+  },
+  "typed_decisions_export": {
+    "source_checkpoint_revision": "1c5edc17a7acd8701df6fc341c0d179f1c62c982",
+    "source_model_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "exporter": "receptron/laya/export/export_onnx.py",
+    "torch": "2.14.0+cpu",
+    "onnx": "1.20.0",
+    "onnxscript": "0.6.2",
+    "onnxruntime": "1.24.3",
+    "console_workaround": "PYTHONUTF8=1 (Windows cp1252 cannot print the exporter check mark)",
+    "max_abs_logit_error_vs_pytorch": 2.1457672e-6,
+    "laya_onnx_bytes": 3874857,
+    "laya_onnx_sha256": "e0cfd203e65a60e246a75e6165ec0501a919915a391a07cdfbc2d140e5876549",
+    "laya_onnx_data_bytes": 1685258240,
+    "laya_onnx_data_sha256": "3cb9279d74d772292d83b68471f5251e1fca540ffc606a993fa9563d9dd6ae31",
+    "runtime_provider": "CPUExecutionProvider",
+    "node_wrapper_smoke": "passed with @receptron/laya 0.1.2 and Node 24.15.0"
+  }
+}

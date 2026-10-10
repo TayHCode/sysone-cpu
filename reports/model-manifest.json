@@ -1,0 +1,41 @@
+{
+  "source_repository": {
+    "name": "NandhaKishorM/laya",
+    "commit": "42626c348753fbb17572a813127df2278a1ec527",
+    "tag": "v0.3.4"
+  },
+  "checkpoint": {
+    "repo": "convaiinnovations/laya",
+    "subfolder": "typed-decisions",
+    "revision": "1c5edc17a7acd8701df6fc341c0d179f1c62c982",
+    "model_file": "typed-decisions/model.safetensors",
+    "bytes": 842609220,
+    "sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e",
+    "config": {
+      "encoder": "answerdotai/ModernBERT-large",
+      "parameters": 421000000,
+      "max_len": 1024,
+      "head_max_len": 256,
+      "fine_tuned": true
+    }
+  },
+  "host": {
+    "os": "Windows 11",
+    "cpu": "AMD Ryzen 9 7950X 16-Core Processor",
+    "physical_cores": 16,
+    "logical_processors": 32,
+    "memory_gib": 64
+  },
+  "runtime": {
+    "python": "3.12.10",
+    "torch": "2.14.0+cpu",
+    "transformers": "5.17.0",
+    "numpy": "2.5.3",
+    "psutil": "7.2.2",
+    "onnxruntime": "1.24.3",
+    "onnx": "1.20.0",
+    "onnxscript": "0.6.2",
+    "torch_intra_op_threads_default_run": 16,
+    "torch_intra_op_threads_constrained_run": 4
+  }
+}

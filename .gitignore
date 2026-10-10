@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.cache/
+cache/
+*.bin
+*.ckpt
+*.gguf
+*.onnx
+*.onnx.data
+*.pt
+*.pth
+reports/results/*.tmp
+*.safetensors
+.pytest_cache/
+.scratch/
+.tools/

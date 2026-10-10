@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "timestamp_utc": "2026-09-21T15:18:16Z",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "torch": "2.14.0+cpu",
+    "numpy": "2.5.3",
+    "laya_version": "0.3.4",
+    "torch_threads": 16,
+    "device": "cpu",
+    "model_path": "<external typed-decisions checkpoint>",
+    "model_config": {
+      "encoder": "answerdotai/ModernBERT-large",
+      "head_layers": 2,
+      "max_len": 1024,
+      "head_max_len": 256,
+      "max_prefixes": 6,
+      "act_costs": {
+        "escalate": 0.5
+      },
+      "cost_wrong_act": 3.0,
+      "amp_dtype": "bf16",
+      "model_name": "laya-typed-decisions",
+      "training": {
+        "updates": 7313,
+        "epochs_completed": 1,
+        "hours": 1.96,
+        "world_size": 1,
+        "fine_tuned_from_checkpoint": true
+      },
+      "gradient_checkpointing": true,
+      "max_tokens_per_batch": 4096,
+      "fine_tuned": true,
+      "calibration_source": "See pinned upstream rl_agent_config.json; omitted from this measurement summary."
+    },
+    "cold_load_ms": 18564.054,
+    "rss_before_mib": 196.02,
+    "rss_after_load_mib": 1993.84
+  },
+  "workloads": {
+    "1": {
+      "p50_ms": 156.115,
+      "p95_ms": 156.115,
+      "min_ms": 156.115,
+      "max_ms": 156.115,
+      "mean_ms": 156.115,
+      "questions": 1,
+      "questions_per_second_p50": 6.406,
+      "rss_peak_mib": 2004.11,
+      "cpu_percent_mean_sampled": 1592.5,
+      "output_sha256_first": "615045d6d0cc8bcc75c059903638b8198377b74f90ab179d89f8f006b21cecdf",
+      "output_sha256_last": "615045d6d0cc8bcc75c059903638b8198377b74f90ab179d89f8f006b21cecdf",
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        156.115
+      ]
+    },
+    "3": {
+      "p50_ms": 326.222,
+      "p95_ms": 326.222,
+      "min_ms": 326.222,
+      "max_ms": 326.222,
+      "mean_ms": 326.222,
+      "questions": 3,
+      "questions_per_second_p50": 9.196,
+      "rss_peak_mib": 2031.79,
+      "cpu_percent_mean_sampled": 1591.1,
+      "output_sha256_first": "62e8e2041019b6894716c30d3050e0beec1e70ea2b9c0e0405e80fb01a4e3aa4",
+      "output_sha256_last": "62e8e2041019b6894716c30d3050e0beec1e70ea2b9c0e0405e80fb01a4e3aa4",
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        326.222
+      ]
+    },
+    "4": {
+      "p50_ms": 394.545,
+      "p95_ms": 394.545,
+      "min_ms": 394.545,
+      "max_ms": 394.545,
+      "mean_ms": 394.545,
+      "questions": 4,
+      "questions_per_second_p50": 10.138,
+      "rss_peak_mib": 2052.45,
+      "cpu_percent_mean_sampled": 1594.5,
+      "output_sha256_first": "48cb6e13df289afa648790134d39f8ae898d79338fb78c5a204f6ec29017a836",
+      "output_sha256_last": "48cb6e13df289afa648790134d39f8ae898d79338fb78c5a204f6ec29017a836",
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        394.545
+      ]
+    },
+    "8": {
+      "p50_ms": 834.705,
+      "p95_ms": 834.705,
+      "min_ms": 834.705,
+      "max_ms": 834.705,
+      "mean_ms": 834.705,
+      "questions": 8,
+      "questions_per_second_p50": 9.584,
+      "rss_peak_mib": 2052.45,
+      "cpu_percent_mean_sampled": 1594.0,
+      "output_sha256_first": "05da959a6e4e3d2dbb52cf8c6c6a2e7652729205f8ba86f7f27d4651eafe151f",
+      "output_sha256_last": "05da959a6e4e3d2dbb52cf8c6c6a2e7652729205f8ba86f7f27d4651eafe151f",
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        834.705
+      ]
+    },
+    "16": {
+      "p50_ms": 1459.908,
+      "p95_ms": 1459.908,
+      "min_ms": 1459.908,
+      "max_ms": 1459.908,
+      "mean_ms": 1459.908,
+      "questions": 16,
+      "questions_per_second_p50": 10.96,
+      "rss_peak_mib": 2044.42,
+      "cpu_percent_mean_sampled": 1586.2,
+      "output_sha256_first": "0b64167f42e0021efdf343623da159d0e71307167b303606b57ce7840781e03b",
+      "output_sha256_last": "0b64167f42e0021efdf343623da159d0e71307167b303606b57ce7840781e03b",
+      "deterministic_repeated_output": true,
+      "sample_ms": [
+        1459.908
+      ]
+    }
+  },
+  "batch_equivalence": {
+    "same_public_answers": true,
+    "batched_digest": "9b003fbe3501b995d7d9255fe97b2044dec65b44825b40302b949c40eb2ed62d",
+    "singles_digest": "9b003fbe3501b995d7d9255fe97b2044dec65b44825b40302b949c40eb2ed62d",
+    "batched_answers": {
+      "department": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.6989,
+          "technical": 0.0814,
+          "sales": 0.1338,
+          "other": 0.086
+        },
+        "confidence": 0.3258,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "score": 1.6111,
+        "legend": {
+          "0": "not urgent",
+          "1": "soon",
+          "2": "critical or blocking"
+        },
+        "probabilities": {
+          "0": 0.0408,
+          "1": 0.3073,
+          "2": 0.6519
+        },
+        "confidence": 0.2972,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "refund": {
+        "type": "noul",
+        "noul": 0.68,
+        "confidence": 0.68,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    },
+    "single_answers": {
+      "department": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.6989,
+          "technical": 0.0814,
+          "sales": 0.1338,
+          "other": 0.086
+        },
+        "confidence": 0.3258,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "score": 1.6111,
+        "legend": {
+          "0": "not urgent",
+          "1": "soon",
+          "2": "critical or blocking"
+        },
+        "probabilities": {
+          "0": 0.0408,
+          "1": 0.3073,
+          "2": 0.6519
+        },
+        "confidence": 0.2972,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "refund": {
+        "type": "noul",
+        "noul": 0.68,
+        "confidence": 0.68,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    }
+  },
+  "fixture": {
+    "state": {
+      "ticket": {
+        "subject": "Duplicate charge",
+        "body": "The customer was billed twice for invoice 4411 and asks for a refund today. They say the duplicate charge is blocking month-end close."
+      }
+    },
+    "questions": {
+      "department": {
+        "type": "choice",
+        "instructions": "Which team should handle this ticket?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages, integrations",
+          "sales": "pricing, demos, new purchases",
+          "other": "everything else"
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this ticket?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      },
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the customer ask for money back?"
+      }
+    },
+    "answers": {
+      "department": {
+        "type": "choice",
+        "choice": "billing",
+        "probabilities": {
+          "billing": 0.6989,
+          "technical": 0.0814,
+          "sales": 0.1338,
+          "other": 0.086
+        },
+        "confidence": 0.3258,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "score": 1.6111,
+        "legend": {
+          "0": "not urgent",
+          "1": "soon",
+          "2": "critical or blocking"
+        },
+        "probabilities": {
+          "0": 0.0408,
+          "1": 0.3073,
+          "2": 0.6519
+        },
+        "confidence": 0.2972,
+        "action": {
+          "act_probability": 1.0
+        }
+      },
+      "refund": {
+        "type": "noul",
+        "noul": 0.68,
+        "confidence": 0.68,
+        "action": {
+          "act_probability": 1.0
+        }
+      }
+    }
+  }
+}
