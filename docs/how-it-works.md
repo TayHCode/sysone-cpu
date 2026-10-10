@@ -9,13 +9,16 @@ markers. Temperature scaling turns these scores into a distribution.
 `choice` selects a named option, `score` returns an expected ordinal value and
 `noul` returns a probability for true. It generates no prose. Questions can be
 batched, but the encoder does not reuse one state representation across them.
-The English typed-decisions model has about 421 million parameters. CPU loading
-uses float32 arithmetic even though the checkpoint configuration says bf16.
+The English typed-decisions model has about 421 million parameters. The default
+PyTorch route executes in FP32 despite the source safetensors file storing
+narrower weights. The optional ONNX graph also uses FP32 CPU arithmetic.
 
 The implementation belongs to [Convai Innovations / Laya](https://github.com/NandhaKishorM/laya/tree/42626c348753fbb17572a813127df2278a1ec527).
 This repository adds setup instructions, a pinned download and measurement
-harnesses around that runtime. Calling `laya.load(model_directory, device="cpu")`
-already works upstream; nothing has been ported or rebuilt here.
+harnesses around that runtime. The default uses
+`laya.load(model_directory, device="cpu")` with `laya==0.3.4`, the unchanged
+PyTorch reference. The optional published `laya==0.4.2` `ONNXAgent` uses CPU
+session options; preprocessing and answer decoding remain upstream code.
 
 ## Other existing paths
 
@@ -30,7 +33,9 @@ commands and a compatible decision API using existing model artifacts.
 [EdgeJev](https://github.com/yzfly/edgejev) provides ONNX build, quantization and
 serving tools. [ONNX community artifacts](https://huggingface.co/onnx-community/laya-typed-decisions-ONNX)
 and [receptron's exporter](https://github.com/receptron/laya/tree/6478649e723122ca24bbf5fb69ed1010023c9750)
-provide other routes. None is required for the direct PyTorch quickstart.
+provide export routes. The optional ONNX recipe downloads the pinned community
+graph without running an exporter. The default PyTorch route needs no ONNX
+conversion.
 The historical ONNX comparison measured the same typed-decisions weights,
 whereas its base-English comparison measured a different checkpoint.
 

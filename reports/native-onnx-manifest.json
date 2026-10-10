@@ -1,0 +1,21 @@
+{
+  "repository": "onnx-community/laya-typed-decisions-ONNX",
+  "revision": "79c441b22da79eb3727bb01e8452e29a32cfa548",
+  "precision": "FP32",
+  "license": "Apache-2.0",
+  "files": {
+    "onnx/model.onnx": {
+      "bytes": 4442939,
+      "sha256": "08a09f491df9efe9d5cbc96d8c5f22a3369951b58c9c64b568db588ab66c21d4"
+    },
+    "onnx/model.onnx_data": {
+      "bytes": 1685175296,
+      "sha256": "92778ebb6a278de5a7041b8a2f9449a05172264d99d8cf471a878ec50ae04741"
+    }
+  },
+  "runtime": {
+    "laya": "0.4.2",
+    "onnxruntime": "1.31.0"
+  },
+  "reference_metadata_revision": "1c5edc17a7acd8701df6fc341c0d179f1c62c982"
+}

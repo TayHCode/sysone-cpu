@@ -19,3 +19,14 @@ Revision: 6478649e723122ca24bbf5fb69ed1010023c9750
 Model terms remain Apache-2.0. No ONNX weights or exporter source ship here.
 ModernBERT-large is by Answer.AI and contributors (Apache-2.0):
 https://huggingface.co/answerdotai/ModernBERT-large
+
+Optional ONNX route: Laya 0.4.2's published ONNXAgent (Apache-2.0):
+https://pypi.org/project/laya/0.4.2/
+ONNX community typed-decisions FP32 graph (Apache-2.0):
+https://huggingface.co/onnx-community/laya-typed-decisions-ONNX
+Revision: 79c441b22da79eb3727bb01e8452e29a32cfa548
+Original tokenizer and calibration configuration retain the checkpoint revision above.
+ONNX Runtime 1.31.0 is by Microsoft and contributors (MIT):
+https://github.com/microsoft/onnxruntime
+These dependencies and model artifacts are downloaded separately; no weights
+or third-party runtime/exporter source are redistributed here.

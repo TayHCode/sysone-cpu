@@ -42,7 +42,9 @@ it lets that downloaded script run when the default policy blocks `.ps1` files.
 It does not change the user's saved execution policy. Group Policy restrictions
 may still apply.
 
-The downloader writes only `.cache/model` and verifies the checkpoint hash.
+The ONNX downloader writes only `.cache/onnx` and `.cache/model`; it verifies
+both the graph and external-weight hashes. The PyTorch downloader fetches
+the separately verified safetensors file.
 It never silently chooses base-English or multilingual Laya. Runtime installs
 use prebuilt wheels. No compiler, GPU driver, ONNX export or service is needed.
 If installation offers to compile a package, stop and check platform support.
@@ -52,21 +54,25 @@ If installation offers to compile a package, stop and check platform support.
 * A missing `uv` means the local `.tools` folder is not on this shell's PATH.
 * Use the CPU wheel index for torch on Linux and Windows. Use PyPI on Apple
   silicon; select `device="cpu"` (the harness does this) instead of MPS.
-* Keep the named versions together. The historical ONNX research tools are not needed by this quickstart.
+* Keep the named versions together. The ONNX quickstart uses the published `laya[onnx]==0.4.2` extra; keep
+  its ORT, ONNX and onnxscript pins together. The default PyTorch route requires
+  `laya==0.3.4` in `.venv`; keep the optional ONNX route in `.venv-onnx`.
 * A checkpoint hash mismatch stops the helper. Remove only your failed download
   and retry; do not substitute another checkpoint or disable verification.
-* Low-memory machines may be unable to build the in-memory model. The historical
-  Windows run used roughly 2 GiB resident memory; allow additional setup overhead.
+* Low-memory machines may be unable to build the in-memory model. Both runtimes
+  need additional memory during construction/optimization beyond steady-state RSS.
 * Upstream may normalize tokenizer configuration in the downloaded folder at
   load time. The pinned weight hash remains unchanged.
 * Setup requires internet once. For subsequent inference set `HF_HUB_OFFLINE=1`
   and `TRANSFORMERS_OFFLINE=1`; the local checkpoint has the encoder config.
-* Start at four threads. For a benchmark use `--warmup 3 --repeats 10` and omit
-  `--counts` to measure the full 1/3/4/8/16 suite, one process at a time.
+* Start at four threads and use the README thread guidance for your CPU. For a
+  benchmark use `--warmup 3 --repeats 10 --counts 1,3,16` with
+  `benchmarks/bench_laya_cpu.py` (or `bench_laya_ort.py` for ONNX), one process
+  at a time.
 
 ## Cleanup and sharing
 
-After saving the results you need, remove only the `.venv`, `.cache`, `.tools`
+After saving the results you need, remove only the `.venv`, `.venv-onnx`, `.cache`, `.tools`
 and `.scratch` folders created for your throwaway run. Installer scripts and
 temporary archives (including Windows `uv.zip`) stay in `.scratch` with the
 variables above. Do not delete an existing model cache or scratch folder.

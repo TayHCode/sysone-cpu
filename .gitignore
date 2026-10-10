@@ -15,3 +15,5 @@ reports/results/*.tmp
 .pytest_cache/
 .scratch/
 .tools/
+.venv-reference/
+.venv-onnx/

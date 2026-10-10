@@ -1,90 +1,157 @@
 # sysone-cpu
 
-Run an existing System-One-style decision model on a CPU, using upstream
-[Laya](https://github.com/NandhaKishorM/laya). This small recipe and measurement
-kit explains a previously used Windows CPU setup and lets you try its pinned
-English typed-decisions checkpoint on Linux, macOS or Windows.
+Run an existing System-One-style decision model on CPU with upstream
+[Laya](https://github.com/NandhaKishorM/laya). This recipe and measurement kit
+selects a pinned English typed-decisions checkpoint. **PyTorch FP32 is the
+default:** it works on all three measured platforms, is fastest on Apple
+silicon in the best-thread comparison, and favors larger batches on the
+measured Ryzen desktop. ONNX Runtime FP32 is an optional route for lower
+latency with one or a few questions on x86 Windows/Linux.
 
 sysone-cpu is an independent project, not affiliated with or endorsed by the
-Laya authors. The name identifies this recipe kit; the upstream runtime package
-and its imports remain `laya`.
+Laya authors. No server, background service or model weights ship here.
 
-It is not a new inference engine, a chat model, or a claim of novel CPU support.
-No server, background service or model weights ship here.
-
-## Quickstart
+## Quickstart: PyTorch FP32
 
 Prerequisites: a supported 64-bit CPU OS, [uv](https://docs.astral.sh/uv/getting-started/installation/)
-and this repository's files in your current folder. Use Python 3.12, at least
-4 GB available RAM and about 6 GB free disk for setup (allow 10 GB headroom).
-Network access to PyPI, the PyTorch CPU index and Hugging Face is needed initially;
-the public checkpoint requires no login. Hugging Face may warn about
-unauthenticated requests; downloads still work, and `HF_TOKEN` is optional for
-higher rate limits. uv can obtain Python.
+and this repository's files in the current folder. Use Python 3.12, at least
+8 GB available RAM and 6 GB free disk for setup; allow 10 GB disk headroom.
+Initial access to PyPI, the PyTorch CPU index and Hugging Face is required.
+The public checkpoint needs no account; unauthenticated-download warnings are
+normal. uv can obtain Python. All packages use binary wheels; no compiler or
+model export is required.
 
 Linux x86-64 and Windows x86-64, **five commands** (PowerShell on Windows):
 
 ```sh
 uv venv --python 3.12
 uv pip install --python .venv --only-binary :all: torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
-uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
+uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 tokenizers==0.23.3 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
 uv run --no-project --python .venv python scripts/download_model.py
 uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/first-run.json
 ```
 
-macOS on Apple silicon, **five commands** (the native PyPI torch wheel; CPU is
-still explicitly selected, so neither Metal nor CUDA is used):
+macOS on Apple silicon, **five commands** (native arm64 wheels from PyPI):
 
 ```sh
 uv venv --python 3.12
 uv pip install --python .venv --only-binary :all: torch==2.14.0
-uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
+uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 tokenizers==0.23.3 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
 uv run --no-project --python .venv python scripts/download_model.py
 uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/first-run.json
 ```
 
-The download is about 846 MB. The helper pins its upstream revision and checks
-the 842,609,220-byte safetensors file against its recorded SHA-256. The final
-command runs only the existing upstream model on synthetic ticket questions,
-prints timings and saves answers/versions to `.cache/first-run.json`. Expect
-`meta.device` to be `"cpu"`, `batch_equivalence.same_public_answers` to be `true`,
-and `fixture.answers` to contain finite numbers in that JSON file. One timed
-repeat is a functionality probe, not a useful performance estimate.
+The pinned safetensors download is about **843 MB**; inference uses FP32 on
+CPU, including Apple silicon (MPS and CUDA are not selected). The downloader
+checks the pinned revision, size and SHA-256. The final command uses synthetic
+ticket questions and saves answers, package versions, latency and sampled
+memory to `.cache/first-run.json`. Expect `meta.device` to be `"cpu"`, finite
+probabilities and passing batch checks. One timed repeat is a functionality
+probe; use at least ten for measurements.
 
-Read [setup](docs/setup.md) for isolated tool installation, cleanup and snags;
-[how it works](docs/how-it-works.md) for the architecture and other runtimes;
-[benchmarks](docs/benchmarks.md) for the measured evidence; and
-[the existing runtime](docs/existing-runtime.md) for the original CPU setup.
+Read [setup](docs/setup.md) for isolation and cleanup,
+[benchmarks](docs/benchmarks.md) for the comparison method and results,
+and [how it works](docs/how-it-works.md) for the architecture.
 
-## With an existing Python 3.12 virtual environment
+## Choosing threads
 
-If a Python 3.12 virtual environment already exists at `.venv` in this folder,
-skip `uv venv` and use these four commands for the same Linux/Windows first run.
-On Apple silicon omit the CPU index from the first command.
+The quickstart's `--threads 4` is a starting point, not a universal optimum.
+Thread count depends on the CPU and number of questions in each request.
+These are the best observed PyTorch counts in the indicated grids:
+
+| CPU | Measured threads | 1 question | 3 questions | 16 questions | 64 questions |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Ryzen 9 7950X, 16 cores | 1, 2, 4, 6, 8, 12, 16, 24, 32 | 8 | 12 | 12 | 24 |
+| Apple M1 Pro | 4, 8, 10 | 4 | 4 | 8 | Not measured |
+| Core i7-10700KF | 1, 2, 4 | 4 | 4 | 4 | Not measured at 4 |
+
+On the Ryzen, those choices improved median latency over four threads by
+1.63×, 2.21×, 2.81× and 2.49× respectively. More threads can help desktop chips
+with many cores: try 8–12 for small and medium requests. On the eight-core
+Intel, four was best among the completed 1/2/4-thread points; higher counts
+were not covered in that sweep. Apple results above come from the separate
+FP32 backend comparison, not a full thread sweep. These observations use a
+synthetic workload and one run per point under ambient load.
+
+Measure your own request sizes with the bench script, one process at a time:
 
 ```sh
-uv pip install --python .venv --only-binary :all: torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
-uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
-uv run --no-project --python .venv python scripts/download_model.py
-uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/first-run.json
+uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 3 --repeats 10 --counts 1,3,16 --output .cache/pytorch-t4.json
 ```
+
+Repeat in fresh processes with `--threads 8` and `--threads 12`, using different
+output files. Compare whole-request medians. Do not transfer PyTorch thread
+choices to ONNX without measuring that backend.
+
+## Optional: ONNX Runtime FP32
+
+ONNX FP32 had lower latency for one or a few questions on x86 Windows/Linux.
+It was not faster on Apple silicon or for large Ryzen batches in the
+best-thread comparison. At four threads on Core i7-10700KF it was 1.28×/1.15×
+faster for one/three questions, but slower for sixteen. With each backend's
+best observed count on Ryzen it was 1.62×/1.14× faster for one/three and
+0.84× as fast for sixteen. On Apple M1 Pro the corresponding ratios were
+0.98×/0.59×/0.33×. See the [measured tables](docs/benchmarks.md) for scope
+and the separate Core i7 six-thread result.
+
+Use a separate environment to retain the `laya==0.3.4` PyTorch reference.
+Linux/Windows commands (on Apple silicon omit the CPU index in command two):
+
+```sh
+uv venv --python 3.12 .venv-onnx
+uv pip install --python .venv-onnx --only-binary :all: torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
+uv pip install --python .venv-onnx --only-binary :all: "laya[onnx]==0.4.2" transformers==5.17.0 tokenizers==0.23.3 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2 onnxruntime==1.31.0 onnx==1.23.2 onnxscript==0.7.2 flatbuffers==25.12.19 protobuf==7.36.2
+uv run --no-project --python .venv-onnx python scripts/download_onnx.py
+uv run --no-project --python .venv-onnx python benchmarks/bench_laya_ort.py --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/onnx-first-run.json
+```
+
+This route uses ONNX Runtime's CPU provider; expect `meta.providers` to be
+`["CPUExecutionProvider"]`. Laya's ONNX extra still installs PyTorch for shared
+helpers. The graph and external weights total **1.69 GB**, plus the original
+checkpoint's tokenizer/configuration; both graph files have pinned revisions,
+sizes and SHA-256 checks. This route downloads no PyTorch weights itself.
+ONNX loaded faster on all three measured CPUs, but startup speed does not
+establish lower warm request latency. Run the parity command below before
+using a different graph or runtime.
+
+## Check any ONNX build against the reference
+
+The public regression suite has 60 cases and 106 decisions. Its neutral
+wording and role-only metadata differ from the immutable measurement suite;
+results are tracked by separate hashes. Run the two backends in separate
+processes, then compare their saved answers:
+
+```sh
+uv run --no-project --python .venv python scripts/parity.py collect --backend pytorch --output .cache/parity-reference.json
+uv run --no-project --python .venv-onnx python scripts/parity.py collect --backend onnx --output .cache/parity-candidate.json
+uv run --no-project --python .venv python scripts/parity.py compare --reference .cache/parity-reference.json --candidate .cache/parity-candidate.json --output .cache/parity-result.json
+```
+
+To check a custom graph, add `--onnx path/to/model.onnx` to the ONNX collection
+command; keep its external weights beside it and keep the reference unchanged.
+The gate requires **at least 99% same top answer, mean KL at most 0.005, and no
+flip with reference confidence at least 0.7**. Failed or incomplete comparisons
+return a nonzero exit status. This checks agreement, not labelled accuracy.
 
 ## Limitations
 
-English typed-decisions is the only checkpoint this quickstart selects. Its
-configured context is 1,024 tokens; long input can be truncated. Confidence is
-not a guarantee of correctness or calibration on your data. The synthetic
-fixtures measure function, repeatability and backend agreement, not accuracy.
-For the measured dynamic int8 conversion, only **84–86% of top answers agreed**
-with FP32. It is not an equivalent drop-in replacement and is not installed here.
-Hardware, thread count, input lengths and competing work affect timings.
+English typed-decisions is the only checkpoint selected here. Its configured
+context is 1,024 tokens; long input can be truncated. Confidence does not
+establish correctness or calibration on your data. A passing synthetic suite
+does not guarantee agreement on every future input.
+
+Current dynamic int8 conversions on Core i7-10700KF matched only **72.6–87.7%
+of top answers**, with confident flips; all failed the equivalence gate.
+The earlier 84–86% results used different conversion/runtime settings. Smaller
+files or lower latency alone do not meet the gate. FP16 passed agreement
+checks but gave no latency gain over ONNX FP32 in the measured comparison. FP16 and int8 builds are **not recommended**; int8
+fails the gate. The quickstart uses PyTorch FP32. Hardware, thread count,
+input lengths and other applications affect performance. Larger batches can
+favor a different backend or thread count.
 
 ## Local checks
 
-Use the Python 3.12 `.venv` created above; activation and a system `python`
-command are unnecessary. The checks need only Python's standard library. They
-validate the helper's integrity behavior and Python syntax; the model smoke
-test is separate.
+These checks need only Python's standard library and do not download a model:
 
 ```sh
 uv run --no-project --python .venv python -m unittest discover -s tests -q
@@ -92,5 +159,6 @@ uv run --no-project --python .venv python scripts/check_syntax.py
 ```
 
 Original recipes and harnesses: [MIT](LICENSE), copyright TayHCode.
-Upstream runtime and checkpoint: Apache-2.0, see [NOTICE](NOTICE). Download
-weights from their author; this repository never redistributes them.
+Upstream Laya runtime/checkpoint: Apache-2.0; ONNX Runtime: MIT.
+See [NOTICE](NOTICE) for attribution and the ONNX graph source. Download weights
+from upstream; this repository never redistributes them.

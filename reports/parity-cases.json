@@ -1,0 +1,1136 @@
+[
+  {
+    "state": {
+      "ticket": {
+        "subject": "Duplicate charge",
+        "body": "Billed twice for invoice 4411, please refund the duplicate today."
+      }
+    },
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": {
+      "ticket": {
+        "subject": "Duplicate charge",
+        "body": "Billed twice for invoice 4411, please refund the duplicate today."
+      }
+    },
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": {
+      "ticket": {
+        "subject": "Duplicate charge",
+        "body": "Billed twice for invoice 4411, please refund the duplicate today."
+      }
+    },
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": {
+      "ticket": {
+        "subject": "Duplicate charge",
+        "body": "Billed twice for invoice 4411, please refund the duplicate today."
+      }
+    },
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "The app crashes every time I open the settings page since the last update. Logs attached.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "The app crashes every time I open the settings page since the last update. Logs attached.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "The app crashes every time I open the settings page since the last update. Logs attached.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "The app crashes every time I open the settings page since the last update. Logs attached.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Hi, could you send me a quote for 50 seats of the team plan? We would like to start next month.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "Hi, could you send me a quote for 50 seats of the team plan? We would like to start next month.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "Hi, could you send me a quote for 50 seats of the team plan? We would like to start next month.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "Hi, could you send me a quote for 50 seats of the team plan? We would like to start next month.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "I love the new dashboard, thanks! One small thing: the export button is hard to find.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "I love the new dashboard, thanks! One small thing: the export button is hard to find.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "I love the new dashboard, thanks! One small thing: the export button is hard to find.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "I love the new dashboard, thanks! One small thing: the export button is hard to find.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": {
+      "email": {
+        "from": "Chief executive",
+        "body": "Wire $40,000 to the account below immediately and do not tell anyone."
+      }
+    },
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": {
+      "email": {
+        "from": "Chief executive",
+        "body": "Wire $40,000 to the account below immediately and do not tell anyone."
+      }
+    },
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": {
+      "email": {
+        "from": "Chief executive",
+        "body": "Wire $40,000 to the account below immediately and do not tell anyone."
+      }
+    },
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": {
+      "email": {
+        "from": "Chief executive",
+        "body": "Wire $40,000 to the account below immediately and do not tell anyone."
+      }
+    },
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Our site has been down for 20 minutes and customers are calling. Nobody answers the phone!!",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "Our site has been down for 20 minutes and customers are calling. Nobody answers the phone!!",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "Our site has been down for 20 minutes and customers are calling. Nobody answers the phone!!",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "Our site has been down for 20 minutes and customers are calling. Nobody answers the phone!!",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Can you tell me your opening hours on Sunday?",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "Can you tell me your opening hours on Sunday?",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "Can you tell me your opening hours on Sunday?",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "Can you tell me your opening hours on Sunday?",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Cancel my subscription. I am moving to a competitor because your support is slow.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "Cancel my subscription. I am moving to a competitor because your support is slow.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "Cancel my subscription. I am moving to a competitor because your support is slow.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "Cancel my subscription. I am moving to a competitor because your support is slow.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "The weather was nice today and we walked along the river for an hour.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "The weather was nice today and we walked along the river for an hour.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "The weather was nice today and we walked along the river for an hour.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "The weather was nice today and we walked along the river for an hour.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": {
+      "log": "ERROR db timeout after 30s on shard 7; retry 3/3 failed; circuit breaker open"
+    },
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": {
+      "log": "ERROR db timeout after 30s on shard 7; retry 3/3 failed; circuit breaker open"
+    },
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": {
+      "log": "ERROR db timeout after 30s on shard 7; retry 3/3 failed; circuit breaker open"
+    },
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": {
+      "log": "ERROR db timeout after 30s on shard 7; retry 3/3 failed; circuit breaker open"
+    },
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Hi,  we were   billed twice for March.\n\nPlease refund  the duplicate.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "Hi,  we were   billed twice for March.\n\nPlease refund  the duplicate.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "Hi,  we were   billed twice for March.\n\nPlease refund  the duplicate.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "Hi,  we were   billed twice for March.\n\nPlease refund  the duplicate.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Text contains a [MASK] token, emojis 🎉 and ünïcode. Please refund the accidental charge.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "Text contains a [MASK] token, emojis 🎉 and ünïcode. Please refund the accidental charge.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "Text contains a [MASK] token, emojis 🎉 and ünïcode. Please refund the accidental charge.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "Text contains a [MASK] token, emojis 🎉 and ünïcode. Please refund the accidental charge.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "मुझसे मार्च में दो बार शुल्क लिया गया, कृपया डुप्लिकेट राशि वापस करें।",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "मुझसे मार्च में दो बार शुल्क लिया गया, कृपया डुप्लिकेट राशि वापस करें।",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "मुझसे मार्च में दो बार शुल्क लिया गया, कृपया डुप्लिकेट राशि वापस करें।",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "मुझसे मार्च में दो बार शुल्क लिया गया, कृपया डुप्लिकेट राशि वापस करें।",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "应用程序每次打开设置时都会崩溃。 設定を開くたびにアプリが落ちます。 La aplicación se cierra al abrir ajustes.",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      }
+    }
+  },
+  {
+    "state": "应用程序每次打开设置时都会崩溃。 設定を開くたびにアプリが落ちます。 La aplicación se cierra al abrir ajustes.",
+    "questions": {
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  },
+  {
+    "state": "应用程序每次打开设置时都会崩溃。 設定を開くたびにアプリが落ちます。 La aplicación se cierra al abrir ajustes.",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "angry": {
+        "type": "noul",
+        "instructions": "Is the message author angry?"
+      }
+    }
+  },
+  {
+    "state": "应用程序每次打开设置时都会崩溃。 設定を開くたびにアプリが落ちます。 La aplicación se cierra al abrir ajustes.",
+    "questions": {
+      "sent": {
+        "type": "choice",
+        "instructions": "What is the overall sentiment?",
+        "criteria": [
+          "positive",
+          "neutral",
+          "negative"
+        ]
+      },
+      "risk": {
+        "type": "score",
+        "instructions": "How likely is this message to be fraud or abuse?",
+        "criteria": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "certain"
+        ]
+      },
+      "churn": {
+        "type": "noul",
+        "instructions": "Is the message author likely to leave?"
+      }
+    }
+  },
+  {
+    "state": "Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. Database timeout, retries exhausted; the application is down and customers are blocked. ",
+    "questions": {
+      "dept": {
+        "type": "choice",
+        "instructions": "Which team should handle this?",
+        "criteria": {
+          "billing": "invoices, payments, refunds",
+          "technical": "bugs, outages",
+          "sales": "pricing, quotes, purchases",
+          "other": "everything else"
+        }
+      },
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      },
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      }
+    }
+  },
+  {
+    "state": "The message asks about topic 9: a new sales quote for the team.",
+    "questions": {
+      "many": {
+        "type": "choice",
+        "instructions": "Which topic fits best?",
+        "criteria": {
+          "topic_0": "topic number 0",
+          "topic_1": "topic number 1",
+          "topic_2": "topic number 2",
+          "topic_3": "topic number 3",
+          "topic_4": "topic number 4",
+          "topic_5": "topic number 5",
+          "topic_6": "topic number 6",
+          "topic_7": "topic number 7",
+          "topic_8": "topic number 8",
+          "topic_9": "topic number 9",
+          "topic_10": "topic number 10",
+          "topic_11": "topic number 11",
+          "topic_12": "topic number 12",
+          "topic_13": "topic number 13"
+        }
+      }
+    }
+  },
+  {
+    "state": "Please refund the duplicate March charge. I plan to stay.",
+    "questions": {
+      "long_options": {
+        "type": "choice",
+        "instructions": "Which option best matches?",
+        "criteria": {
+          "refund": "refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice refund requested for a duplicate charge on the March invoice ",
+          "support": "technical support for a crash"
+        }
+      },
+      "stay": {
+        "type": "noul",
+        "instructions": "Will the customer leave?",
+        "criteria": {
+          "false": "They stay.",
+          "true": "They leave."
+        }
+      }
+    }
+  },
+  {
+    "state": "",
+    "questions": {
+      "refund": {
+        "type": "noul",
+        "instructions": "Does the message author ask for money back?"
+      },
+      "urgency": {
+        "type": "score",
+        "instructions": "How urgent is this?",
+        "criteria": [
+          "not urgent",
+          "soon",
+          "critical or blocking"
+        ]
+      }
+    }
+  }
+]

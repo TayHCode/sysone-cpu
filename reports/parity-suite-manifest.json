@@ -1,0 +1,14 @@
+{
+  "sha256": "c58ab537492a9314f192c5ce1140ea0d53683fa1177fc913ebb73a00e7116d5b",
+  "cases": 60,
+  "decisions": 106,
+  "source": "Public synthetic regression questions with neutral wording and role-only message metadata.",
+  "reference": "Pinned PyTorch FP32, laya==0.3.4",
+  "gate": {
+    "same_top_pct_min": 99,
+    "mean_kl_max": 0.005,
+    "reference_confidence_for_no_flips": 0.7
+  },
+  "measurement_suite_sha256": "5b760efce37ccfd8bc9ca0d6a0314b19950a44a416ed9f24e7518d5d39126f3f",
+  "relation": "The measurement suite is unchanged; this separately hashed public regression suite adapts wording and metadata. Record results for each suite separately."
+}

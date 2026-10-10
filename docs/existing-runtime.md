@@ -14,7 +14,8 @@ Required files are `model.safetensors`, `rl_agent_config.json`,
 `encoder/config.json`, `tokenizer/tokenizer.json` and
 `tokenizer/tokenizer_config.json`. The weight file is 842,609,220 bytes;
 SHA-256 `4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e`.
-The ONNX graph/data hashes are recorded in `reports/onnx-manifest.json`.
+Historical ONNX graph/data hashes are recorded in `reports/onnx-manifest.json`;
+the optional community graph uses `reports/native-onnx-manifest.json`.
 
 The original setup used Python 3.12.10, torch 2.14.0+cpu,
 Transformers 5.17.0, safetensors 0.8.0, huggingface_hub 1.32.0,
@@ -25,9 +26,11 @@ on CPU it uses float32 arithmetic even though the source configuration says bf16
 The original benchmarks use `benchmarks/bench_laya_cpu.py --model` with a
 local checkpoint directory, 3 warm-ups and 10 repeats at either 16 or 4 threads.
 
-The secondary path is an already-created FP32 ONNX export from
+The historical secondary path used an already-created FP32 ONNX export from
 [receptron/laya 0.1.2](https://github.com/receptron/laya/tree/6478649e723122ca24bbf5fb69ed1010023c9750),
 run with `CPUExecutionProvider` and four threads. No conversion is required by
-this quickstart, and no runtime is rebuilt here. See the model manifests in
+the optional ONNX recipe, which downloads a different pinned community export
+and uses the published native ONNX runtime. The default uses the original
+PyTorch checkpoint. No runtime is rebuilt here. See the model manifests in
 `reports/` for its hashes. The published base-English ONNX bundle is a different
 checkpoint and must not be substituted for typed-decisions.
