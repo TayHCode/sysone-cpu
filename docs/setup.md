@@ -37,10 +37,44 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
 $env:PATH = "$PWD\.tools;$env:PATH"
 ```
 
-The PowerShell execution-policy override applies only to the installer process;
-it lets that downloaded script run when the default policy blocks `.ps1` files.
-It does not change the user's saved execution policy. Group Policy restrictions
-may still apply.
+## Windows execution policies
+
+The setup commands and the five-command PyTorch quickstart were tested in fresh
+folders under process-scope `Restricted`, `AllSigned` and `Bypass`. The inline
+directory, environment-variable and download commands work under all three.
+The README's uv/Python commands run native programs and also work under all
+three; this applies to the optional ONNX commands' invocation too.
+
+| Process policy | Downloaded unsigned installer `.ps1` | Unsigned quickstart saved as `.ps1` | Commands pasted at the prompt |
+| --- | --- | --- | --- |
+| Restricted | blocked | blocked | work |
+| AllSigned | blocked | blocked | work |
+| Bypass | runs | runs | work |
+
+For the downloaded installer under `Restricted` or `AllSigned`, use the exact
+invocation in the isolation block above:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
+```
+
+After adding `.tools` to PATH, paste the README commands into the same shell.
+Virtual-environment activation with `.venv\Scripts\Activate.ps1` is not needed:
+every uv command selects its environment with `--python`. The activation hint
+printed by `uv venv` does not add a required setup step.
+
+If you save commands as an unsigned script, that script also needs Bypass under
+`Restricted` or `AllSigned`. For example, after saving the README commands to
+`.scratch\quickstart.ps1`, run:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\quickstart.ps1
+```
+
+Each override applies only to that child PowerShell process. The calling shell
+keeps its policy, and no saved execution policy changes. Group Policy can
+override process policy; that case was not tested. A signed script trusted by
+`AllSigned` was not part of these unsigned-script checks.
 
 The ONNX downloader writes only `.cache/onnx` and `.cache/model`; it verifies
 both the graph and external-weight hashes. The PyTorch downloader fetches

@@ -31,6 +31,13 @@ uv run --no-project --python .venv python scripts/download_model.py
 uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/first-run.json
 ```
 
+On Windows, paste these commands into `powershell -NoProfile`. They run uv and
+Python directly, so activation and an execution-policy override are not needed
+under `Restricted` or `AllSigned`. Under either policy, run the downloaded uv
+installer with `powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1`.
+See [Windows execution policies](docs/setup.md#windows-execution-policies) for
+the isolated installer and commands saved as a PowerShell script.
+
 macOS on Apple silicon, **five commands** (native arm64 wheels from PyPI):
 
 ```sh
