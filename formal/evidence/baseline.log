@@ -1,0 +1,48 @@
+Source/model guard: matched (baseline)
+openjdk version "21.0.12-patch1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12-patch1+1 (build 21.0.12-patch1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12-patch1+1 (build 21.0.12-patch1+1-LTS, mixed mode, sharing)
+Python 3.14.4; tla2tools v1.8.0 SHA-256 15d103b7e5617780bcc904c0af12f1ad242e2b345c0301136c5be4588f17edac
+Bounds: 2 callers; 1 load/session each; success or exception; no fairness/liveness
+UseLock=TRUE; 1 TLC worker; Java -Xmx1g
+TLC command: $FV_JAVA -Xmx1g -XX:ActiveProcessorCount=1 -cp $FV_TLA_JAR tlc2.TLC -workers 1 -seed 1 -fp 0 Construction (temporary model/config copy)
+TLC2 Version 2026.10.15-patch145915 (rev: 932d35e)
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 0 and seed 1 with 1 worker on 1 cores with 989MB heap and 64MB offheap memory [pid: 1723828] (Linux 7.0.0-38-generic amd64, Eclipse Adoptium 21.0.12-patch1 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file <work>/Construction.tla
+Parsing file /tmp/tlc-7216530361122703169/Integers.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /tmp/tlc-7216530361122703169/TLC.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /tmp/tlc-7216530361122703169/_TLCTrace.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /tmp/tlc-7216530361122703169/Naturals.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /tmp/tlc-7216530361122703169/Sequences.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /tmp/tlc-7216530361122703169/FiniteSets.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /tmp/tlc-7216530361122703169/TLCExt.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module Construction
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module Construction
+Starting... (2026-10-19 01:30:06)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-10-19 01:30:06.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 5.9E-17
+129 states generated, 120 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 21.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+Finished in 00s at (2026-10-19 01:30:06)
+TLC wall runtime: 0.428 seconds; TLC exit=0
+Actual load replay: A=2 (requested 2), B=4 (requested 4), original_restored=True; raises=(False,False)
+Actual load replay: A=2 (requested 2), B=4 (requested 4), original_restored=True; raises=(False,True)
+Actual load replay: A=2 (requested 2), B=4 (requested 4), original_restored=True; raises=(True,False)
+Actual load replay: A=2 (requested 2), B=4 (requested 4), original_restored=True; raises=(True,True)
+PASS: bounded scoped construction and actual-code replay

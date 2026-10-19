@@ -1,0 +1,5 @@
+--- a/scripts/onnx_runtime.py
++++ b/scripts/onnx_runtime.py
+@@ -21 +21 @@
+-    with _CONSTRUCTION_LOCK:
++    with __import__('contextlib').nullcontext():

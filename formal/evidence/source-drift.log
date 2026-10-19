@@ -1,0 +1,4 @@
+$ formal/run.sh
+ERROR: Source drift: scripts/onnx_runtime.py; follow verify-onnx-construction skill
+
+Runner exit: 1

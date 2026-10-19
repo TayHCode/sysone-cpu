@@ -161,9 +161,13 @@ favor a different backend or thread count.
 These checks need only Python's standard library and do not download a model:
 
 ```sh
-uv run --no-project --python .venv python -m unittest discover -s tests -q
-uv run --no-project --python .venv python scripts/check_syntax.py
+python3 -m unittest discover -s tests -q
+python3 scripts/check_syntax.py
 ```
+
+The release gate runs these local checks; it does not install the optional
+inference environment or download weights. For bounded concurrency verification,
+see [formal/README.md](formal/README.md).
 
 Original recipes and harnesses: [MIT](LICENSE), copyright TayHCode.
 Upstream Laya runtime/checkpoint: Apache-2.0; ONNX Runtime: MIT.

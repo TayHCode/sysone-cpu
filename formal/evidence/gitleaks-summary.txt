@@ -1,0 +1,7 @@
+Publication scans (redacted; counts only):
+gitleaks detect --source <clone> --log-opts=fv/sysone-cpu-formal --redact
+gitleaks detect --source <clone> --no-git --redact
+History findings: 0
+Working-tree findings: 0
+The two commands are also required again on the final fresh clone before push.
+Raw reports remain outside the repository.

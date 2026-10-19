@@ -1,0 +1,43 @@
+{
+  "exclude": [],
+  "quickstart": [
+    {
+      "file": "README.md",
+      "line": 165,
+      "argv": [
+        "python3",
+        "scripts/check_syntax.py"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "role": "tests",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-q"
+      ]
+    }
+  ],
+  "approvals": [
+    {
+      "scope": "metadata",
+      "kind": "email",
+      "path": "@commit/d5f6c03dbeed",
+      "fingerprint": "cd29c5ac348a026a",
+      "reason": "Already public on main as verified 2026-10-19; history is not rewritten by owner decision 2026-10-18."
+    },
+    {
+      "scope": "metadata",
+      "kind": "email",
+      "path": "@commit/b98c1fb35ccd",
+      "fingerprint": "cd29c5ac348a026a",
+      "reason": "Already public on main as verified 2026-10-19; history is not rewritten by owner decision 2026-10-18."
+    }
+  ]
+}

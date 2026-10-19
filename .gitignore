@@ -17,3 +17,11 @@ reports/results/*.tmp
 .tools/
 .venv-reference/
 .venv-onnx/
+formal/.work/
+formal/.venv/
+*.jar
+formal/jdk*/
+
+# TLC generated counterexample traces
+*_TTrace_*.tla
+*_TTrace_*.bin

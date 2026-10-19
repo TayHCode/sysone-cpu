@@ -1,0 +1,156 @@
+$ formal/run.sh --scratch-unlocked
+Source/model guard: matched (scratch-unlocked)
+openjdk version "21.0.12-patch1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12-patch1+1 (build 21.0.12-patch1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12-patch1+1 (build 21.0.12-patch1+1-LTS, mixed mode, sharing)
+Python 3.14.4; tla2tools v1.8.0 SHA-256 15d103b7e5617780bcc904c0af12f1ad242e2b345c0301136c5be4588f17edac
+Bounds: 2 callers; 1 load/session each; success or exception; no fairness/liveness
+UseLock=FALSE; 1 TLC worker; Java -Xmx1g
+TLC command: $FV_JAVA -Xmx1g -XX:ActiveProcessorCount=1 -cp $FV_TLA_JAR tlc2.TLC -workers 1 -seed 1 -fp 0 Construction (temporary model/config copy)
+TLC2 Version 2026.10.15-patch145915 (rev: 932d35e)
+Warning: Please run the Java VM, which executes TLC with a throughput optimized garbage collector, by passing the "-XX:+UseParallelGC" property.
+(Use the -nowarning option to disable this warning.)
+Running breadth-first search Model-Checking with fp 0 and seed 1 with 1 worker on 1 cores with 989MB heap and 64MB offheap memory [pid: 1723886] (Linux 7.0.0-38-generic amd64, Eclipse Adoptium 21.0.12-patch1 64bit, MSBDiskFPSet, DiskStateQueue).
+Parsing file <work>/Construction.tla
+Parsing file /tmp/tlc-8194613851260391091/Integers.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/Integers.tla)
+Parsing file /tmp/tlc-8194613851260391091/TLC.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/TLC.tla)
+Parsing file /tmp/tlc-8194613851260391091/_TLCTrace.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/_TLCTrace.tla)
+Parsing file /tmp/tlc-8194613851260391091/Naturals.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/Naturals.tla)
+Parsing file /tmp/tlc-8194613851260391091/Sequences.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/Sequences.tla)
+Parsing file /tmp/tlc-8194613851260391091/FiniteSets.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/FiniteSets.tla)
+Parsing file /tmp/tlc-8194613851260391091/TLCExt.tla (jar:file:~/.local/share/fv-tools/tla2tools-v1.8.0.jar!/tla2sany/StandardModules/TLCExt.tla)
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module TLCExt
+Semantic processing of module _TLCTrace
+Semantic processing of module Construction
+Linting of module TLCExt
+Linting of module _TLCTrace
+Linting of module Construction
+Starting... (2026-10-19 01:30:07)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-10-19 01:30:07.
+Error: Invariant ScopedConstruction is violated.
+Error: The behavior up to this point is:
+State 1: <Initial predicate>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 0
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"pending", "pending">>
+/\ pc = <<"acquire", "acquire">>
+/\ saved = <<-1, -1>>
+
+State 2: <Acquire(1) line 33, col 15 to line 37, col 81 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 0
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"pending", "pending">>
+/\ pc = <<"capture", "acquire">>
+/\ saved = <<-1, -1>>
+
+State 3: <Capture(1) line 40, col 15 to line 43, col 81 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 0
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"pending", "pending">>
+/\ pc = <<"patch", "acquire">>
+/\ saved = <<0, -1>>
+
+State 4: <Patch(1) line 47, col 13 to line 50, col 77 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 1
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"pending", "pending">>
+/\ pc = <<"construct", "acquire">>
+/\ saved = <<0, -1>>
+
+State 5: <FailBeforeSession(1) line 81, col 25 to line 84, col 89 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 1
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"restore", "acquire">>
+/\ saved = <<0, -1>>
+
+State 6: <Acquire(2) line 33, col 15 to line 37, col 81 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 1
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"restore", "capture">>
+/\ saved = <<0, -1>>
+
+State 7: <Capture(2) line 40, col 15 to line 43, col 81 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 1
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"restore", "patch">>
+/\ saved = <<0, 1>>
+
+State 8: <Patch(2) line 47, col 13 to line 50, col 77 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 2
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"restore", "construct">>
+/\ saved = <<0, 1>>
+
+State 9: <Restore(1) line 95, col 15 to line 98, col 79 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 0
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"release", "construct">>
+/\ saved = <<0, 1>>
+
+State 10: <Invoke(2) line 55, col 14 to line 58, col 79 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 0
+/\ callee = <<0, 0>>
+/\ observed = <<-1, -1>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"release", "session">>
+/\ saved = <<0, 1>>
+
+State 11: <Observe(2) line 75, col 15 to line 78, col 78 of module Construction>
+/\ setting = <<0, 0>>
+/\ owner = 0
+/\ factory = 0
+/\ callee = <<0, 0>>
+/\ observed = <<-1, 0>>
+/\ outcome = <<"raise", "pending">>
+/\ pc = <<"release", "outcome">>
+/\ saved = <<0, 1>>
+
+407 states generated, 257 distinct states found, 95 states left on queue.
+The depth of the complete state graph search is 11.
+Finished in 00s at (2026-10-19 01:30:07)
+Trace exploration spec path: ./Construction_TTrace_1792373407.tla
+TLC wall runtime: 0.450 seconds; TLC exit=12
+Actual load replay: A=2 (requested 2), B=0 (requested 4), original_restored=False; raises=(False,False)
+FAIL: scoped construction violated or verification error (see trace above)
+
+Runner exit: 1
