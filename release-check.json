@@ -3,7 +3,7 @@
   "quickstart": [
     {
       "file": "README.md",
-      "line": 165,
+      "line": 211,
       "argv": [
         "python3",
         "scripts/check_syntax.py"
