@@ -40,8 +40,9 @@ $env:PATH = "$PWD\.tools;$env:PATH"
 
 ## Windows execution policies
 
-The setup commands and the six-command PyTorch quickstart were tested in fresh
-folders under process-scope `Restricted`, `AllSigned` and `Bypass`. The inline
+The setup commands and the original five-command PyTorch quickstart were tested
+in fresh folders under process-scope `Restricted`, `AllSigned` and `Bypass`.
+The current quickstart adds a PyTorch import check before the model download. The inline
 directory, environment-variable and download commands work under all three.
 The README's uv/Python commands run native programs and also work under all
 three; this applies to the optional ONNX commands' invocation too.
