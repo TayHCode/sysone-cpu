@@ -1,7 +1,8 @@
 # Setup
 
-Use the five commands in the README from the extracted repository folder.
-On Windows start `powershell -NoProfile`; an SSH session may initially be cmd.
+Use the six commands in the README from the extracted repository folder.
+On Windows open Windows PowerShell from the Start menu; an SSH session may initially be cmd.
+Complete the [Windows prerequisites](../README.md#prepare-a-stock-windows-pc) first.
 On Linux use x86-64; on macOS use native arm64 on Apple silicon. These are the
 platforms targeted here, not a promise for every CPU or Python version.
 
@@ -32,15 +33,16 @@ New-Item -ItemType Directory -Force .tools, .scratch | Out-Null
 $env:TEMP = "$PWD\.scratch"; $env:TMP = "$PWD\.scratch"; $env:UV_PYTHON_PREFERENCE = "only-managed"
 $env:UV_CACHE_DIR = "$PWD\.cache\uv"; $env:UV_PYTHON_INSTALL_DIR = "$PWD\.tools\python"; $env:HF_HOME = "$PWD\.cache\huggingface"
 $env:UV_INSTALL_DIR = "$PWD\.tools"; $env:UV_NO_MODIFY_PATH = "1"
-Invoke-WebRequest https://astral.sh/uv/install.ps1 -OutFile .scratch/install-uv.ps1
-powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
+Invoke-WebRequest -UseBasicParsing https://astral.sh/uv/install.ps1 -OutFile .scratch/install-uv.ps1
+& "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
 $env:PATH = "$PWD\.tools;$env:PATH"
 ```
 
 ## Windows execution policies
 
-The setup commands and the five-command PyTorch quickstart were tested in fresh
-folders under process-scope `Restricted`, `AllSigned` and `Bypass`. The inline
+The setup commands and the original five-command PyTorch quickstart were tested
+in fresh folders under process-scope `Restricted`, `AllSigned` and `Bypass`.
+The current quickstart adds a PyTorch import check before the model download. The inline
 directory, environment-variable and download commands work under all three.
 The README's uv/Python commands run native programs and also work under all
 three; this applies to the optional ONNX commands' invocation too.
@@ -55,7 +57,7 @@ For the downloaded installer under `Restricted` or `AllSigned`, use the exact
 invocation in the isolation block above:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
+& "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
 ```
 
 After adding `.tools` to PATH, paste the README commands into the same shell.
@@ -68,7 +70,7 @@ If you save commands as an unsigned script, that script also needs Bypass under
 `.scratch\quickstart.ps1`, run:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\quickstart.ps1
+& "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File .scratch\quickstart.ps1
 ```
 
 Each override applies only to that child PowerShell process. The calling shell
@@ -85,6 +87,9 @@ If installation offers to compile a package, stop and check platform support.
 
 ## Troubleshooting
 
+* On Windows, `WinError 126` while importing torch can mean a missing Visual C++
+  runtime, including `VCRUNTIME140_THREADS.dll`. Install or repair the latest
+  x64 runtime linked in the README, restart if requested, and retry.
 * A missing `uv` means the local `.tools` folder is not on this shell's PATH.
 * Use the CPU wheel index for torch on Linux and Windows. Use PyPI on Apple
   silicon; select `device="cpu"` (the harness does this) instead of MPS.

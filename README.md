@@ -21,29 +21,75 @@ The public checkpoint needs no account; unauthenticated-download warnings are
 normal. uv can obtain Python. All packages use binary wheels; no compiler or
 model export is required.
 
-Linux x86-64 and Windows x86-64, **five commands** (PowerShell on Windows):
+### Prepare a stock Windows PC
+
+Use 64-bit Windows and Windows PowerShell 5.1 or later. Start Windows PowerShell
+from the Start menu. Python, Git and a compiler are not required beforehand.
+
+1. Download this repository with **Code → Download ZIP**, then extract it and
+   open PowerShell in the extracted `sysone-cpu-main` folder. If the repository
+   files are already present, use that folder. Git is optional.
+2. Install the latest [Microsoft Visual C++ v14 Redistributable for x64](https://aka.ms/vc14/vc_redist.x64.exe).
+   Run the downloaded installer, approve its administrator prompt and restart
+   Windows if requested. PyTorch needs this runtime even when installed from a
+   binary wheel. Finish this installation before continuing.
+3. Install uv in this folder. Paste the following commands into PowerShell.
+   The full PowerShell path works even when PowerShell is missing from `PATH`.
+   The execution-policy override applies only to the installer process.
+
+```powershell
+New-Item -ItemType Directory -Force .tools, .scratch | Out-Null
+$env:UV_INSTALL_DIR = "$PWD\.tools"
+$env:UV_NO_MODIFY_PATH = "1"
+Invoke-WebRequest -UseBasicParsing https://astral.sh/uv/install.ps1 -OutFile .scratch/install-uv.ps1
+& "$env:SystemRoot\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1
+$env:PATH = "$PWD\.tools;$env:PATH"
+uv --version
+```
+
+Keep this shell open for the quickstart. If an organization enforces a Group
+Policy that blocks scripts, ask its administrator to install uv using the
+[official installation options](https://docs.astral.sh/uv/getting-started/installation/).
+See [isolated setup](docs/setup.md#keep-everything-local) to keep Python, package
+caches and model downloads inside the repository too.
+
+### Run the model
+
+Linux x86-64 and Windows x86-64, **six commands** (PowerShell on Windows):
 
 ```sh
 uv venv --python 3.12
 uv pip install --python .venv --only-binary :all: torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
 uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 tokenizers==0.23.3 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
+uv run --no-project --python .venv python -c "import torch; print(torch.ones(1).item())"
+```
+
+Continue only if the import check prints `1.0`. If it fails on Windows, install
+or repair the Visual C++ runtime above and retry before downloading weights.
+
+```sh
 uv run --no-project --python .venv python scripts/download_model.py
 uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/first-run.json
 ```
 
-On Windows, paste these commands into `powershell -NoProfile`. They run uv and
-Python directly, so activation and an execution-policy override are not needed
-under `Restricted` or `AllSigned`. Under either policy, run the downloaded uv
-installer with `powershell -NoProfile -ExecutionPolicy Bypass -File .scratch\install-uv.ps1`.
-See [Windows execution policies](docs/setup.md#windows-execution-policies) for
-the isolated installer and commands saved as a PowerShell script.
+On Windows, paste these commands into the same PowerShell session used above.
+They run uv and Python directly, so virtual-environment activation and an
+execution-policy override are not needed for these six commands.
+See [Windows execution policies](docs/setup.md#windows-execution-policies)
+if you save them as a PowerShell script.
 
-macOS on Apple silicon, **five commands** (native arm64 wheels from PyPI):
+macOS on Apple silicon, **six commands** (native arm64 wheels from PyPI):
 
 ```sh
 uv venv --python 3.12
 uv pip install --python .venv --only-binary :all: torch==2.14.0
 uv pip install --python .venv --only-binary :all: laya==0.3.4 transformers==5.17.0 tokenizers==0.23.3 safetensors==0.8.0 huggingface_hub==1.32.0 numpy==2.5.3 psutil==7.2.2
+uv run --no-project --python .venv python -c "import torch; print(torch.ones(1).item())"
+```
+
+Continue only if the import check prints `1.0`.
+
+```sh
 uv run --no-project --python .venv python scripts/download_model.py
 uv run --no-project --python .venv python benchmarks/bench_laya_cpu.py --model .cache/model/typed-decisions --threads 4 --warmup 1 --repeats 1 --counts 1,3 --output .cache/first-run.json
 ```
